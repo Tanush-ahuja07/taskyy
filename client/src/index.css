@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal Task Manager Design System */
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 13% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+
+    --primary: 220 70% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 18%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 220 14% 96%;
+    --accent-foreground: 220 13% 18%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 70% 50%;
+
+    --radius: 0.5rem;
+
+    /* Status colors */
+    --status-pending: 45 93% 47%;
+    --status-progress: 220 70% 50%;
+    --status-completed: 142 71% 45%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 13% 18% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 13% 18% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(220 13% 18% / 0.1);
+  }
+
+  .dark {
+    --background: 220 13% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 13% 13%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 13% 13%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 220 70% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 13% 18%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 220 13% 18%;
+    --muted-foreground: 220 9% 60%;
+
+    --accent: 220 13% 18%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 20%;
+    --input: 220 13% 20%;
+    --ring: 220 70% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .status-badge {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .status-pending {
+    background-color: hsl(var(--status-pending) / 0.15);
+    color: hsl(var(--status-pending));
+  }
+
+  .status-in-progress {
+    background-color: hsl(var(--status-progress) / 0.15);
+    color: hsl(var(--status-progress));
+  }
+
+  .status-completed {
+    background-color: hsl(var(--status-completed) / 0.15);
+    color: hsl(var(--status-completed));
+  }
+}
